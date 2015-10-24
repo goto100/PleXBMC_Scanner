@@ -67,11 +67,15 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None, **kwargs):
   elif len(paths) >= 3 and paths[-1].lower() == 'stream' and paths[-2].lower() == 'bdmv':
     (name, year) = CleanName(paths[-3])
     movie = Media.Movie(name, year)
-    # for i in files:
-      # movie.parts.append(i)
-    movie.parts.append(root + '/' + '/'.join(paths[:-2]) + '/BDMV/index.bdmv')
+
+    index_path = root + '/'.join(paths[:-2]) + '/BDMV/index.bdmv'
+    if os.path.exists(index_path):
+      movie.parts.append(index_path)
+
+    for i in files:
+      movie.parts.append(i)
     mediaList.append(movie)
-    
+
   else:
     
     # Make movies!
