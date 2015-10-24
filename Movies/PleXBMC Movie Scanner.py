@@ -3,7 +3,7 @@ import Media, VideoFiles, Stack, Utils, Filter
 SeriesScanner = __import__('Plex Series Scanner')
 
 def Log(entry):
-  with open('/var/db/plexdata/Plex Media Server/Logs/Plex Movie Scanner with Disc Image Support.log', 'a') as file:
+  with open('/var/db/plexdata/Plex Media Server/Logs/PleXBMC Movies Scanner.log', 'a') as file:
     file.write(entry + "\r\n")
 
 nice_match = '(.+) [\(\[]([1-2][0-9]{3})[\)\]]'
