@@ -72,8 +72,9 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None, **kwargs):
     if os.path.exists(index_path):
       movie.parts.append(index_path)
 
-    for i in files:
-      movie.parts.append(i)
+    # for i in files:
+      # movie.parts.append(i)
+      
     mediaList.append(movie)
 
   else:
